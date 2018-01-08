@@ -8,3 +8,5 @@ QC: mask-out grid cells except for where all of the following are true (applied 
 - at least 80% of time-steps are non-missing in the full period
 
 Merging: at each grid cell and time step, if value for QC'd GHCND is missing, replace with value from QC'd HadEX2.
+
+Note: both GHCND and HadEX2 must be described by the same grids. 
