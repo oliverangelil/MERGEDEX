@@ -1,4 +1,4 @@
-# MERGEDEX (specifically for PRCPTOT and RX1day indices in this script, but can be expanded to any ETCCDI indices)
+## MERGEDEX (specifically for PRCPTOT and RX1day indices in this script, but can be expanded to any ETCCDI indices)
 First performs quality control on HadEX2 and GHCND and then replaces missing values in GHCND with HadEX2.
 
 ### Details:
