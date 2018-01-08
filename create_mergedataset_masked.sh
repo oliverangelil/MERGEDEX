@@ -1,6 +1,8 @@
 #!/bin/bash
 
+###################################################
 # PRPCPTOT
+###################################################
 # declare paths
 path_data='/path_to_data/GHCNDEX-HadEX2'      
 fname_H2='H2_PRCPTOT_1901-2010_RegularGrid_global_3.75x2.5deg_LSmask.nc'
@@ -38,8 +40,9 @@ cdo -s -ifthenelse -gtc,-999 -setmisstoc,-999 $path_data/tmpf_GHCND_PRCPTOT_1951
 # delete temporary files
 rm $path_data/tmpf_*   
 
-
+###################################################
 # Rx1day
+###################################################
 # declare paths
 fname_H2='H2_Rx1day_1901-2010_RegularGrid_global_3.75x2.5deg_LSmask.nc'
 fname_GHCND='GHCND_Rx1day_1951-2017_RegularGrid_global_2.5x2.5deg_LSmask_3.75x2.5deg.nc'
