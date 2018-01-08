@@ -20,7 +20,7 @@ do
     # trim files to years of interest
     cdo -s -selyear,$yr1/$yr2 $path_data/${!fname_var} $path_data/tmpf_${obsname}_PRCPTOT_1951-2010.nc
 
-    # generate 3 masks based on whether: 1) at least 80% of data is non-missing in first 10 years; 2) as least 80% of data is non-missing in last 10 years; and 3) at least 80% of data is non-missing in entire period. 
+    # generate 3 masks based on whether: 1) at least 80% of data is non-missing in first 10 years; 2) at least 80% of data is non-missing in last 10 years; and 3) at least 80% of data is non-missing in entire period. 
     cdo -s -lec,8 -timsum -eqc,-999 -setmisstoc,-999 -selyear,$yr1/$(($yr1 + 9)) $path_data/tmpf_${obsname}_PRCPTOT_1951-2010.nc $path_data/tmpf_${obsname}_PRCPTOT_1951-2010_mask_first_10.nc
     cdo -s -lec,8 -timsum -eqc,-999 -setmisstoc,-999 -selyear,$yr1/$(($yr2 - 9)) $path_data/tmpf_${obsname}_PRCPTOT_1951-2010.nc $path_data/tmpf_${obsname}_PRCPTOT_1951-2010_mask_last_10.nc
     cdo -s -lec,$QC_all_years -timsum -eqc,-999 -setmisstoc,-999 $path_data/tmpf_${obsname}_PRCPTOT_1951-2010.nc $path_data/tmpf_${obsname}_PRCPTOT_1951-2010_mask_all.nc
@@ -51,7 +51,7 @@ do
     # trim files to years 
     cdo -s -selyear,$yr1/$yr2 $path_data/${!fname_var} $path_data/tmpf_${obsname}_Rx1day_1951-2010.nc
 
-    # generate 3 masks based on whether: 1) at least 80% of data is non-missing in first 10 years; 2) as least 80% of data is non-missing in last 10 years; and 3) at least 80% of data is non-missing in entire period. 
+    # generate 3 masks based on whether: 1) at least 80% of data is non-missing in first 10 years; 2) at least 80% of data is non-missing in last 10 years; and 3) at least 80% of data is non-missing in entire period. 
     cdo -s -lec,8 -timsum -eqc,-999 -setmisstoc,-999 -selyear,$yr1/$(($yr1 + 9)) $path_data/tmpf_${obsname}_Rx1day_1951-2010.nc $path_data/tmpf_${obsname}_Rx1day_1951-2010_mask_first_10.nc
     cdo -s -lec,8 -timsum -eqc,-999 -setmisstoc,-999 -selyear,$yr1/$(($yr2 - 9)) $path_data/tmpf_${obsname}_Rx1day_1951-2010.nc $path_data/tmpf_${obsname}_Rx1day_1951-2010_mask_last_10.nc
     cdo -s -lec,$QC_all_years -timsum -eqc,-999 -setmisstoc,-999 $path_data/tmpf_${obsname}_Rx1day_1951-2010.nc $path_data/tmpf_${obsname}_Rx1day_1951-2010_mask_all.nc
